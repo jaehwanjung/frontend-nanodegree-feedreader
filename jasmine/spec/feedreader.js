@@ -33,12 +33,11 @@ $(function() {
          */
 
         it('have a non-empty URL defined', function () {
-            var feedUrl;
-            for (var i in allFeeds) {
-                feedUrl = allFeeds[i].url;
+            $.each(allFeeds, function (index, feed) {
+                var feedUrl = feed.url;
                 expect(feedUrl).toBeDefined();
                 expect(feedUrl).not.toBe('');
-            }
+            });
         });
 
         /* TODO: Write a test that loops through each feed
@@ -47,12 +46,11 @@ $(function() {
          */
 
         it('have a non-empty name defined', function () {
-            var feedName;
-            for (var i in allFeeds) {
-                feedName = allFeeds[i].name;
+            $.each(allFeeds, function (index, feed) {
+                var feedName = feed.name;
                 expect(feedName).toBeDefined();
                 expect(feedName).not.toBe('');
-            }
+            });
         });
     });
 
